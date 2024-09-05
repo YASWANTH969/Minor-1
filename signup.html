@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>registration</title>
+<link rel="shortcut icon" type="image" href="https://static.vecteezy.com/system/resources/thumbnails/021/919/677/small/login-icon-in-trendy-flat-style-isolated-on-white-background-approach-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-flat-style-for-graphic-design-vector.jpg">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/8359ac44a8.js" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+form {
+  border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border border-radius: 30px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+button:hover {
+  capacity: 0.6;
+  color: white;                      
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: blue;
+}
+.container {
+  padding: 16px;
+}
+.loginbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: blue;
+}
+}
+</style>
+</head>
+<body style="background-color: lightblue;">
+<center><h2>Registration Form</h2></center>
+<form action="index2.php" method="post">
+  <div class="container">
+    <b><span class="fa fa-user"></span></b>
+    <input type="text" placeholder="Enter Username" name="Username" required></br></br>
+    <span class="fa fa-lock"></span>
+    <input type="password" placeholder="Enter Password" name="Password" required></br></br>
+    <i class="fa-solid fa-image-portrait"></i>
+    <input type="number" placeholder="Enter Age" name="Age" required>&nbsp;&nbsp;
+    <i class="fa-solid fa-calendar-days"></i>
+    <input type="date" placeholder="dd-mm-yyyy" name="date" required>&nbsp;&nbsp;&nbsp;
+    <i class="fa-solid fa-user"></i>&nbsp;
+    Male<input type="radio" name="gender" value="Male">&nbsp;
+    Female<input type="radio" name="gender" value="Female"></br></br>
+    <i class="fa-solid fa-phone"></i>
+    <input type="number" placeholder="Enter mobile.no" name="number" required>&nbsp;
+    <i class="fa-solid fa-at"></i>
+    <input type="email" placeholder="Enter a valid Email ID" name="Email" required>&nbsp;&nbsp;&nbsp;</br></br>
+    <i class="fa-solid fa-location-dot"></i>
+    <input type="Text" placeholder="Enter farmer address" name="Address" required>&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;
+    <input type="Text" placeholder="House number" name="HNO" required>&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;
+    <input type="Text" placeholder="City" name="City" required>&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;
+    <input type="text" placeholder="Region" name="Region" required>&nbsp;&nbsp;&nbsp;</br></br>&nbsp;&nbsp;
+    <input type="text" placeholder="Zip/postal code" name="text" required>&nbsp;&nbsp;&nbsp;</br></br>
+    <label for="country">Choose a country:</label>
+
+<select name="Country" id="Country">
+  <option value="India">India</option>
+  <option value="USA">USA</option>
+  <option value="Australia">Australia</option>
+  <option value="Germany">Germany</option>
+</select>
+  </div>
+  <div class="container">
+    <button type="submit" class="loginbtn">Login</button>&nbsp;
+    <button type="reset" class="cancelbtn">Cancel</button>
+  </div>
+</form>
+</body>
+</html>
