@@ -55,9 +55,10 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") navLightbox(1);
 });
 
-// Telugu Sri Rama Devotional Audio Player
+// Devotional Sound Synthesizer & Audio Player (Sri Rama Song)
 let audioCtx = null;
 let isPlayingAudio = false;
+let melodyInterval = null;
 
 function toggleAudio() {
   const audio = document.getElementById("sriRamaAudio");
@@ -65,62 +66,124 @@ function toggleAudio() {
   const label = document.querySelector(".audio-label");
 
   if (isPlayingAudio) {
-    if (audio) audio.pause();
+    if (audio) { audio.pause(); audio.currentTime = 0; }
     if (audioCtx) audioCtx.suspend();
+    if (melodyInterval) clearInterval(melodyInterval);
     isPlayingAudio = false;
     if (icon) icon.textContent = "🎵";
     if (label) label.textContent = "శ్రీరామ గానం (Play)";
   } else {
+    // Start Carnatic Flute Melody + Tanpura Drone Synth immediately
+    playSriRamaMelody();
+    isPlayingAudio = true;
+    if (icon) icon.textContent = "🔊";
+    if (label) label.textContent = "శ్రీరామ గానం (Playing)";
+
+    // Try HTML5 Audio Stream simultaneously
     if (audio) {
-      audio.play().then(() => {
-        isPlayingAudio = true;
-        if (icon) icon.textContent = "🔊";
-        if (label) label.textContent = "శ్రీరామ గానం (Playing)";
-      }).catch(err => {
-        console.log("Audio stream fallback to synth:", err);
-        playTanpuraDrone();
-        isPlayingAudio = true;
-        if (icon) icon.textContent = "🔊";
-        if (label) label.textContent = "శ్రీరామ ధ్యానం (Playing)";
+      audio.volume = 0.5;
+      audio.play().catch(err => {
+        console.log("Stream play info:", err);
       });
-    } else {
-      playTanpuraDrone();
-      isPlayingAudio = true;
-      if (icon) icon.textContent = "🔊";
-      if (label) label.textContent = "శ్రీరామ ధ్యానం (Playing)";
     }
   }
 }
 
-function playTanpuraDrone() {
+function playSriRamaMelody() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   }
-
   if (audioCtx.state === 'suspended') {
     audioCtx.resume();
   }
 
-  const baseFreq = 136.1; // Sacred C# OM Frequency
-  const freqs = [baseFreq, baseFreq * 1.5, baseFreq * 2];
-
-  freqs.forEach(f => {
+  // 1. Tanpura Drone Background
+  const baseFreq = 136.1; // C# OM drone
+  [baseFreq, baseFreq * 1.5, baseFreq * 2].forEach(f => {
     const osc = audioCtx.createOscillator();
     const gain = audioCtx.createGain();
     osc.type = 'sine';
     osc.frequency.setValueAtTime(f, audioCtx.currentTime);
-    gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-
-    const lfo = audioCtx.createOscillator();
-    lfo.frequency.value = 0.2;
-    const lfoGain = audioCtx.createGain();
-    lfoGain.gain.value = 0.015;
-    lfo.connect(lfoGain);
-    lfoGain.connect(gain.gain);
-
+    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
     osc.connect(gain);
     gain.connect(audioCtx.destination);
     osc.start();
-    lfo.start();
   });
+
+  // 2. Carnatic Sri Rama Song Melody ('Sri Rama Rama Rameti')
+  // Frequencies for Raga Shankarabharanam notes (Sa Re Ga Ma Pa Dha Ni Sa')
+  const notes = {
+    'S': 272.2,
+    'R': 306.0,
+    'G': 340.5,
+    'M': 363.0,
+    'P': 408.3,
+    'D': 453.6,
+    'N': 510.4,
+    "S'": 544.4
+  };
+
+  // 'Sri Ra-ma Ra-ma Ra-me-ti' sequence
+  const songSequence = [
+    { note: 'S', duration: 400 },
+    { note: 'G', duration: 400 },
+    { note: 'P', duration: 600 },
+    { note: 'P', duration: 400 },
+    { note: 'M', duration: 400 },
+    { note: 'G', duration: 400 },
+    { note: 'R', duration: 400 },
+    { note: 'S', duration: 600 },
+
+    { note: 'G', duration: 400 },
+    { note: 'P', duration: 400 },
+    { note: 'D', duration: 400 },
+    { note: "S'", duration: 600 },
+    { note: 'N', duration: 400 },
+    { note: 'D', duration: 400 },
+    { note: 'P', duration: 600 },
+
+    { note: 'P', duration: 400 },
+    { note: "S'", duration: 400 },
+    { note: "S'", duration: 400 },
+    { note: 'N', duration: 400 },
+    { note: 'D', duration: 400 },
+    { note: 'P', duration: 400 },
+    { note: 'M', duration: 400 },
+    { note: 'G', duration: 600 },
+
+    { note: 'G', duration: 400 },
+    { note: 'M', duration: 400 },
+    { note: 'P', duration: 400 },
+    { note: 'G', duration: 400 },
+    { note: 'R', duration: 400 },
+    { note: 'S', duration: 800 }
+  ];
+
+  let step = 0;
+  function playNoteStep() {
+    if (!isPlayingAudio) return;
+    const current = songSequence[step];
+    const freq = notes[current.note];
+
+    if (freq && audioCtx) {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle'; // Flute-like tone
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+      gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (current.duration / 1000));
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + (current.duration / 1000));
+    }
+
+    step = (step + 1) % songSequence.length;
+  }
+
+  playNoteStep();
+  if (melodyInterval) clearInterval(melodyInterval);
+  melodyInterval = setInterval(playNoteStep, 450);
 }
