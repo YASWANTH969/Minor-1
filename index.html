@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official Portal of Sri Rama Temple Devasthanam, Polepalli (Basireddypalli), Pulivendula Mandal, Andhra Pradesh 516390. Online e-Darshan, e-Seva, e-Hundi & Panchangam.">
+  <meta name="description" content="Official Information Portal of Sri Rama Temple Devasthanam, Polepalli (Basireddypalli), Pulivendula Mandal, YSR Kadapa Dist, AP 516390. Darshan Timings, Sevas, Panchangam & Gallery.">
   <title>Sri Rama Temple Devasthanam | Polepalli (Basireddypalli)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,12 @@
     <div class="devotional-ticker">
       <span class="ticker-badge">🚩 శ్రీరామ జయం</span>
       <marquee behavior="scroll" direction="left" scrollamount="4">
-        || రఘుకుల తిలక శ్రీ సీతారామ స్వామివారి మందిరం • శ్రీరామ నవమి & శనివారం విశేష దర్శన వేళలు • Online e-Darshan & e-Seva slots available ||
+        || రఘుకుల తిలక శ్రీ సీతారామ స్వామివారి మందిరం • పోలేపల్లి (బాసిరెడ్డిపల్లి) • శ్రీరామ నవమి & శనివారం విశేష దర్శన వేళలు ||
       </marquee>
     </div>
     <div class="top-bar-links">
-      <span class="top-info">📞 Helpline: +91 94940 00000</span>
-      <span class="lang-switch" onclick="toggleLang()">🇮🇳 తెలుగు / English</span>
+      <span class="top-info">📍 Plus Code: C723+7R</span>
+      <span class="lang-switch">🇮🇳 తెలుగు / English</span>
     </div>
   </div>
 </div>
@@ -41,21 +41,20 @@
     <button class="menu-btn" aria-label="Open menu">☰</button>
     <nav id="navMenu">
       <a href="#home">Home</a>
-      <a href="#services" class="highlight-link">e-Services 🎟️</a>
       <a href="#temple">About Temple</a>
       <a href="#timings">Darshan Timings</a>
+      <a href="#services">Pilgrim Info</a>
       <a href="#rituals">Panchangam</a>
       <a href="#seva">Seva</a>
       <a href="#events">Calendar</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a class="donate-nav" href="#ehundi" onclick="openHundiModal()">e-Hundi 🪙</a>
+      <a href="#contact" class="donate-nav">Contact & Location 📍</a>
     </nav>
   </div>
 </header>
 
-<!-- Main Banner Hero -->
 <main>
+<!-- Hero Banner -->
 <section id="home" class="hero">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
@@ -63,122 +62,43 @@
       <span class="om-gold">ॐ</span>
       <span>శ్రీ సీతారామచంద్ర పరబ్రహ్మణే నమః</span>
     </div>
-    <h1>Sri Rama Temple<br><span class="gold-gradient-text">Devasthanam Portal</span></h1>
-    <p class="hero-subtitle">Polepalli (Basireddypalli), Pulivendula Mandal, YSR Kadapa Dist, AP - 516390</p>
+    <h1>Sri Rama Temple<br><span class="gold-gradient-text">Polepalli Devasthanam</span></h1>
+    <p class="hero-subtitle">Polepalli (Basireddypalli), Pulivendula Mandal, YSR Kadapa Dist, Andhra Pradesh - 516390</p>
     
     <div class="hero-services-bar">
-      <button class="service-pill" onclick="openDarshanModal()">
-        <span class="pill-icon">🎟️</span>
-        <div class="pill-text"><b>Book e-Darshan</b><small>Select Darshan Slot</small></div>
-      </button>
-      <button class="service-pill" onclick="openSevaModal()">
-        <span class="pill-icon">🪔</span>
-        <div class="pill-text"><b>Book e-Seva</b><small>Kalyanam & Archana</small></div>
-      </button>
-      <button class="service-pill highlight-pill" onclick="openHundiModal()">
-        <span class="pill-icon">🪙</span>
-        <div class="pill-text"><b>Offer e-Hundi</b><small>Temple & Annadanam</small></div>
-      </button>
-      <button class="service-pill" onclick="scrollToSection('rituals')">
+      <a href="#timings" class="service-pill">
+        <span class="pill-icon">🛕</span>
+        <div class="pill-text"><b>Darshan Timings</b><small>Daily Morning & Evening</small></div>
+      </a>
+      <a href="#rituals" class="service-pill">
         <span class="pill-icon">📅</span>
-        <div class="pill-text"><b>Daily Rituals</b><small>Panchangam & Poojas</small></div>
-      </button>
+        <div class="pill-text"><b>Daily Panchangam</b><small>Nitya Sevas & Rituals</small></div>
+      </a>
+      <a href="#seva" class="service-pill">
+        <span class="pill-icon">🪔</span>
+        <div class="pill-text"><b>Temple Sevas</b><small>Kalyanam & Archana</small></div>
+      </a>
+      <a href="#contact" class="service-pill highlight-pill">
+        <span class="pill-icon">📍</span>
+        <div class="pill-text"><b>Location & Map</b><small>Google Maps Direction</small></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Quick Stats & News Flash Bar -->
+<!-- News Flash Bar -->
 <section class="news-flash-section">
   <div class="container news-flash-container">
-    <div class="flash-label">📢 TEMPLE ANNOUNCEMENTS</div>
+    <div class="flash-label">📢 ANNOUNCEMENT</div>
     <div class="flash-content">
-      <p>✨ <strong>Annual Anniversary (వార్షికోత్సవం):</strong> Celebrated every year on <strong>24th December</strong> with Mahanyasa Purvaka Abhishekam & Annadanam.</p>
+      <p>✨ <strong>Annual Anniversary (వార్షికోత్సవం):</strong> Celebrated every year on <strong>24th December</strong> with Abhishekam, Special Pujas & Annadanam.</p>
     </div>
-    <a href="#events" class="flash-btn">View All Events →</a>
-  </div>
-</section>
-
-<!-- TTD Online Pilgrim Services Section -->
-<section id="services" class="section services-section">
-  <div class="container">
-    <p class="eyebrow center">TTD-STYLE DIGITAL DEVASTHANAM SERVICES</p>
-    <h2 class="center devasthanam-title">Online Pilgrim Services (ఆన్‌లైన్ సేవలు)</h2>
-    <p class="section-intro">Experience hassle-free pilgrim services. Book Darshan slots, participate in Sevas, and offer Srivari e-Hundi donations digitally.</p>
-    
-    <div class="services-grid">
-      <!-- Card 1: e-Darshan Slot Booking -->
-      <div class="service-card">
-        <div class="service-card-header">
-          <span class="service-badge">e-DARSHAN</span>
-          <div class="service-icon">🎟️</div>
-        </div>
-        <h3>Special Entry & Token Darshan</h3>
-        <p class="telugu-desc">శ్రీ స్వామివారి దర్శన స్లాట్ బుకింగ్</p>
-        <p>Book convenient time slots for morning and evening darshan for you and your family.</p>
-        <ul class="service-features">
-          <li>✓ Mon-Fri: 6-9 AM & 6-8 PM</li>
-          <li>✓ Saturday Special: 6-9:30 AM & 6-10 PM</li>
-          <li>✓ Instant Printable Darshan Pass Slip</li>
-        </ul>
-        <button class="btn primary full-width" onclick="openDarshanModal()">Book Darshan Slot →</button>
-      </div>
-
-      <!-- Card 2: e-Seva Online Booking -->
-      <div class="service-card featured-service">
-        <div class="service-card-header">
-          <span class="service-badge gold-badge">POPULAR SEVA</span>
-          <div class="service-icon">🪔</div>
-        </div>
-        <h3>Arjitha Sevas & Pooja Offering</h3>
-        <p class="telugu-desc">అర్జిత సేవలు మరియు పూజలు</p>
-        <p>Participate in Kalyanotsavam, Archana, Deepa Seva, and Abhishekam offerings.</p>
-        <ul class="service-features">
-          <li>✓ Sita Rama Kalyana Seva</li>
-          <li>✓ Sahasra Namarchana & Deepa Seva</li>
-          <li>✓ Devotee Prasadam allocation</li>
-        </ul>
-        <button class="btn primary gold-btn full-width" onclick="openSevaModal()">Book Seva Ticket →</button>
-      </div>
-
-      <!-- Card 3: e-Hundi & Trust Donations -->
-      <div class="service-card">
-        <div class="service-card-header">
-          <span class="service-badge">SRIVARI HUNDI</span>
-          <div class="service-icon">🪙</div>
-        </div>
-        <h3>Digital e-Hundi & Donations</h3>
-        <p class="telugu-desc">శ్రీవారి ఈ-హుండీ మరియు కానుకలు</p>
-        <p>Offer your digital hundi offerings toward Nitya Annadanam, Goshala, and Temple Renovation.</p>
-        <ul class="service-features">
-          <li>✓ Nitya Annadanam Trust</li>
-          <li>✓ Temple Maintenance & Construction</li>
-          <li>✓ Instant 80G Tax Digital Receipt</li>
-        </ul>
-        <button class="btn primary full-width" onclick="openHundiModal()">Donate / e-Hundi →</button>
-      </div>
-
-      <!-- Card 4: Accommodation & Rest House -->
-      <div class="service-card">
-        <div class="service-card-header">
-          <span class="service-badge">PILGRIM REST</span>
-          <div class="service-icon">🏨</div>
-        </div>
-        <h3>Accommodation & Choultries</h3>
-        <p class="telugu-desc">భక్తుల వసతి గృహాల వివరాలు</p>
-        <p>Information regarding pilgrim rest houses, cloakrooms, and community halls in Polepalli.</p>
-        <ul class="service-features">
-          <li>✓ Devotee Rest Rooms</li>
-          <li>✓ Marriage & Event Community Hall</li>
-          <li>✓ Clean Drinking Water & Facilities</li>
-        </ul>
-        <button class="btn secondary full-width" onclick="openAccommodationModal()">View Room Info →</button>
-      </div>
-    </div>
+    <a href="#events" class="flash-btn">View Calendar →</a>
   </div>
 </section>
 
 <!-- About Temple Section -->
-<section id="temple" class="section alt">
+<section id="temple" class="section">
   <div class="container split">
     <div class="section-image temple-photo-card" onclick="openLightbox('images/sri_rama_idols.png', 'శ్రీ సీతారామ స్వామివారి మూలవిరాట్ దర్శనం')">
       <img src="images/sri_rama_idols.png" alt="Sri Sita Rama Swamivari Moolavirat" class="temple-photo">
@@ -193,8 +113,8 @@
     <div>
       <p class="eyebrow">OUR TEMPLE</p>
       <h2>A Place of Devotion, Peace and Spiritual Unity</h2>
-      <p class="lead">Sri Rama Temple at Polepalli (Basireddypalli) is a revered sanctuary where devotees gather to worship Lord Sri Sita Rama, Lakshmana, and Anjaneya Swamy.</p>
-      <p>Upholding the divine values of Sanatana Dharma, the temple serves as the spiritual heart of the village and surrounding regions in Pulivendula Mandal. Devotees participate in regular pujas, annual anniversaries, and grand Sri Rama Navami celebrations.</p>
+      <p class="lead">Sri Rama Temple at Polepalli (Basireddypalli) is a sacred sanctuary where devotees gather to seek the blessings of Lord Sri Sita Rama, Lakshmana, and Anjaneya Swamy.</p>
+      <p>Upholding traditional values, the temple serves as the spiritual heart of the village and surrounding community in Pulivendula Mandal. All devotees can visit directly during temple opening hours.</p>
       <div class="facts">
         <div><b>Devasthanam</b><span>Sri Rama Temple</span></div>
         <div><b>Village</b><span>Polepalli (Basireddypalli)</span></div>
@@ -208,11 +128,11 @@
 </section>
 
 <!-- Temple Darshan Timings -->
-<section id="timings" class="section timings-section">
+<section id="timings" class="section alt timings-section">
   <div class="container">
     <p class="eyebrow center">DARSHAN & POOJA TIMINGS</p>
     <h2 class="center">Temple Darshan Schedule (దర్శన వేళలు)</h2>
-    <p class="section-intro">Plan your divine visit. Daily morning and evening darshan timings are detailed below.</p>
+    <p class="section-intro">Walk-in darshan is open to all devotees during the morning and evening schedules listed below.</p>
     <div class="timings-grid">
       <div class="timing-card">
         <div class="timing-header">
@@ -229,7 +149,7 @@
             </div>
           </div>
           <div class="slot">
-            <span class="slot-icon"><ctrl42></span>
+            <span class="slot-icon">🌆</span>
             <div>
               <b>Evening Darshan</b>
               <span>6:00 PM – 8:00 PM</span>
@@ -253,7 +173,7 @@
             </div>
           </div>
           <div class="slot">
-            <span class="slot-icon"><ctrl42></span>
+            <span class="slot-icon">🌆</span>
             <div>
               <b>Evening Darshan</b>
               <span>6:00 PM – 10:00 PM</span>
@@ -277,7 +197,7 @@
             </div>
           </div>
           <div class="slot">
-            <span class="slot-icon"><ctrl42></span>
+            <span class="slot-icon">🌆</span>
             <div>
               <b>Evening Darshan</b>
               <span>6:00 PM – 8:00 PM</span>
@@ -289,12 +209,87 @@
   </div>
 </section>
 
-<!-- Daily Panchangam & Ritual Timeline -->
+<!-- Pilgrim Information Section -->
+<section id="services" class="section services-section">
+  <div class="container">
+    <p class="eyebrow center">PILGRIM INFORMATION & SERVICES</p>
+    <h2 class="center devasthanam-title">Devasthanam Facilities (భక్తుల సదుపాయాలు)</h2>
+    <p class="section-intro">Key details for visiting devotees and community services at Sri Rama Temple, Polepalli.</p>
+    
+    <div class="services-grid">
+      <!-- Card 1: Direct Walking Darshan -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-badge">DARSHAN INFO</span>
+          <div class="service-icon">🛕</div>
+        </div>
+        <h3>Direct Walk-in Darshan</h3>
+        <p class="telugu-desc">సాధారణ భక్తుల దర్శనం</p>
+        <p>No token or advance booking required. All devotees can visit directly during temple opening hours.</p>
+        <ul class="service-features">
+          <li>✓ Free Walk-in Darshan</li>
+          <li>✓ Special Alankaram on Saturdays</li>
+          <li>✓ Teertham & Prasadam for all</li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Seva Info -->
+      <div class="service-card featured-service">
+        <div class="service-card-header">
+          <span class="service-badge gold-badge">RITUALS</span>
+          <div class="service-icon">🪔</div>
+        </div>
+        <h3>Traditional Poojas & Sevas</h3>
+        <p class="telugu-desc">సాంప్రదాయ పూజలు & సేవలు</p>
+        <p>Traditional Archana, Deepalankara Seva, and Kalyanotsavam performed by temple priests.</p>
+        <ul class="service-features">
+          <li>✓ Nitya Ashtottara Archana</li>
+          <li>✓ Sita Rama Kalyanotsavam</li>
+          <li>✓ Deepa Seva & Flower Alankaram</li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Srivari Hundi & Contributions -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-badge">SRIVARI HUNDI</span>
+          <div class="service-icon">🪙</div>
+        </div>
+        <h3>Temple Hundi & Annadanam</h3>
+        <p class="telugu-desc">హుండీ కానుకలు & అన్నదానం</p>
+        <p>Devotees can offer voluntary hundi offerings and support Annadanam food distribution.</p>
+        <ul class="service-features">
+          <li>✓ Devoted Hundi Offerings</li>
+          <li>✓ Annadanam Support</li>
+          <li>✓ Temple Maintenance Fund</li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Accommodation & Facilities -->
+      <div class="service-card">
+        <div class="service-card-header">
+          <span class="service-badge">PILGRIM AMENITIES</span>
+          <div class="service-icon">🏨</div>
+        </div>
+        <h3>Pilgrim Facilities & Rest Area</h3>
+        <p class="telugu-desc">వసతి మరియు సౌకర్యాలు</p>
+        <p>Rest areas, clean drinking water, and community hall facilities for visiting families.</p>
+        <ul class="service-features">
+          <li>✓ Devotee Rest Area</li>
+          <li>✓ Clean Drinking Water</li>
+          <li>✓ Event & Function Hall</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Daily Panchangam Timeline -->
 <section id="rituals" class="section alt rituals-section">
   <div class="container">
-    <p class="eyebrow center">DAILY SEVA PANCHANGAM</p>
+    <p class="eyebrow center">DAILY SEVA SCHEDULE</p>
     <h2 class="center">Daily Rituals & Nitya Sevas (నిత్య సేవా పట్టిక)</h2>
-    <p class="section-intro">Experience the traditional Vedic rituals performed daily at Sri Rama Temple from Suprabhatam to Ekanta Seva.</p>
+    <p class="section-intro">Traditional Vedic rituals performed daily at Sri Rama Temple from Suprabhatam to Ekanta Seva.</p>
     
     <div class="timeline-container">
       <div class="timeline-item">
@@ -308,14 +303,14 @@
         <div class="time-badge">06:30 AM</div>
         <div class="timeline-content">
           <h4>🪔 Abhishekam & Archana</h4>
-          <p>Morning ritual Abhishekam, Alankaram, and Ashtottara Shatanamarchana with flowers.</p>
+          <p>Morning ritual Abhishekam, Alankaram, and Ashtottara Shatanamarchana with fresh flowers.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="time-badge">08:30 AM</div>
         <div class="timeline-content">
           <h4>🍚 Morning Naivedyam & Teertha Prasadam</h4>
-          <p>Offering of sacred Naivedyam and distribution of Teertham & Prasadam to devotees.</p>
+          <p>Offering of sacred Naivedyam and distribution of Teertham & Prasadam to all visiting devotees.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -348,33 +343,33 @@
 <!-- Seva Section -->
 <section id="seva" class="section">
   <div class="container">
-    <p class="eyebrow center">TEMPLE SEVA OPPORTUNITIES</p>
-    <h2 class="center">Participate in Sacred Seva</h2>
-    <p class="section-intro">Devotees can sponsor and participate in sacred temple sevas and community programs.</p>
+    <p class="eyebrow center">TEMPLE SEVAS</p>
+    <h2 class="center">Participate in Devotional Seva</h2>
+    <p class="section-intro">Devotees can participate in traditional temple sevas and community service programs.</p>
     <div class="cards">
       <article class="card">
         <div class="icon">🪔</div>
         <h3>Deepa Seva</h3>
-        <p>Offer oil lamps as a symbol of light, prosperity, and spiritual devotion.</p>
-        <button class="btn-link" onclick="openSevaModalWith('Deepa Seva & Alankaram (₹316)')">Book Seva →</button>
+        <p>Offer oil lamps as a symbol of light, positivity, and spiritual devotion.</p>
+        <span class="category-tag">Traditional Pooja</span>
       </article>
       <article class="card">
         <div class="icon">🍚</div>
-        <h3>Annadanam Seva</h3>
-        <p>Support free food distribution to devotees visiting the temple during programs.</p>
-        <button class="btn-link" onclick="openHundiModalWith('Nitya Annadanam Trust')">Donate Annadanam →</button>
+        <h3>Annadanam</h3>
+        <p>Support food service for devotees visiting the temple during festival programs.</p>
+        <span class="category-tag">Community Service</span>
       </article>
       <article class="card">
         <div class="icon">🌸</div>
-        <h3>Sita Rama Kalyanam</h3>
-        <p>Sponsor special celestial marriage ritual of Sri Sita Rama Swamivaru.</p>
-        <button class="btn-link" onclick="openSevaModalWith('Sita Rama Kalyanam (₹1116)')">Book Seva →</button>
+        <h3>Pooja Seva</h3>
+        <p>Participate in special Ashtottara Namarchana and devotional flower offerings.</p>
+        <span class="category-tag">Special Ritual</span>
       </article>
       <article class="card">
         <div class="icon">🛕</div>
-        <h3>Temple Renovation</h3>
-        <p>Contribute toward temple infrastructure, vimana gopuram, and mandapam maintenance.</p>
-        <button class="btn-link" onclick="openHundiModalWith('Temple Renovation & Development')">Contribute →</button>
+        <h3>Temple Development</h3>
+        <p>Contribute toward temple infrastructure and mandapam maintenance.</p>
+        <span class="category-tag">Devasthanam Support</span>
       </article>
     </div>
   </div>
@@ -439,7 +434,7 @@
   </div>
 </section>
 
-<!-- Lightbox Modal -->
+<!-- Lightbox Modal for Gallery -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
   <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
   <button class="lightbox-nav prev" onclick="navLightbox(-1, event)" aria-label="Previous Image">&#10094;</button>
@@ -448,26 +443,8 @@
   <div id="lightboxTitle" class="lightbox-title"></div>
 </div>
 
-<!-- e-Hundi & Support Section -->
-<section id="ehundi" class="donate">
-  <div class="container donate-grid">
-    <div>
-      <p class="eyebrow">SRIVARI DIGITAL HUNDI</p>
-      <h2>Offer your devotion toward Sri Rama Temple & Annadanam.</h2>
-      <p>Devotees worldwide can contribute digitally to Sri Rama Temple Devasthanam for daily sevas, Annadanam, and temple development.</p>
-    </div>
-    <div class="donate-box">
-      <div class="hundi-icon">🪙</div>
-      <h3>Srivari e-Hundi</h3>
-      <p>Official UPI / Bank Transfer Portal</p>
-      <button class="btn primary gold-btn" onclick="openHundiModal()">Donate / Offer e-Hundi</button>
-      <small>🔒 Official Digital Devasthanam Receipt Issued Immediately</small>
-    </div>
-  </div>
-</section>
-
 <!-- Contact & Pilgrim Guide -->
-<section id="contact" class="section">
+<section id="contact" class="section alt">
   <div class="container contact-grid">
     <div>
       <p class="eyebrow">PILGRIM GUIDE & CONTACT</p>
@@ -494,12 +471,12 @@
       <input id="phone" required placeholder="Phone Number">
       <select id="purpose">
         <option>General Darshan Enquiry</option>
-        <option>Seva Booking</option>
-        <option>Annadanam Contribution</option>
-        <option>Accommodation Info</option>
+        <option>Seva Information</option>
+        <option>Annadanam Information</option>
+        <option>Festival Schedule</option>
       </select>
       <textarea id="message" required rows="4" placeholder="Your Message or Enquiry"></textarea>
-      <button class="btn primary" type="submit">Send Enquiry</button>
+      <button class="btn primary" type="submit">Send Message</button>
       <p id="formMessage" class="form-message"></p>
     </form>
   </div>
@@ -514,15 +491,16 @@
         <span class="brand-mark">ॐ</span>
         <span><strong>Sri Rama Temple Devasthanam</strong><small>Polepalli (Basireddypalli)</small></span>
       </div>
-      <p>శ్రీ రామ జయం • Official TTD-style Digital Portal for Sri Rama Temple Devasthanam, Polepalli.</p>
+      <p>శ్రీ రామ జయం • Information Portal for Sri Rama Temple Devasthanam, Polepalli.</p>
     </div>
     <div>
-      <h4>e-Services & Links</h4>
-      <a href="#services">Book e-Darshan</a>
-      <a href="#services">Book e-Seva</a>
-      <a href="#ehundi">Offer e-Hundi</a>
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#temple">About Temple</a>
       <a href="#timings">Darshan Timings</a>
       <a href="#rituals">Panchangam</a>
+      <a href="#seva">Seva</a>
+      <a href="#gallery">Gallery</a>
     </div>
     <div>
       <h4>Devasthanam Address</h4>
@@ -531,180 +509,6 @@
   </div>
   <div class="copyright">© <span id="year"></span> Sri Rama Temple Devasthanam, Polepalli. All rights reserved.</div>
 </footer>
-
-<!-- Modals for e-Services -->
-
-<!-- 1. e-Darshan Booking Modal -->
-<div id="darshanModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'darshanModal')">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal('darshanModal')">&times;</button>
-    <div class="modal-header">
-      <span class="modal-badge">🎟️ TTD e-DARSHAN</span>
-      <h2>Book Special Entry Darshan Slot</h2>
-      <p>Select your preferred date and time slot for temple darshan pass.</p>
-    </div>
-    <form id="darshanForm" onsubmit="generateDarshanPass(event)">
-      <div class="form-group">
-        <label for="dName">Primary Pilgrim Name</label>
-        <input type="text" id="dName" required placeholder="e.g. Bojja Yaswanth Reddy">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="dPhone">Mobile Number</label>
-          <input type="tel" id="dPhone" required placeholder="10-digit mobile">
-        </div>
-        <div class="form-group">
-          <label for="dCount">Number of Pilgrims</label>
-          <select id="dCount">
-            <option value="1">1 Pilgrim</option>
-            <option value="2">2 Pilgrims</option>
-            <option value="3">3 Pilgrims</option>
-            <option value="4">4 Pilgrims</option>
-            <option value="5">5+ Family Group</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="dDate">Darshan Date</label>
-          <input type="date" id="dDate" required>
-        </div>
-        <div class="form-group">
-          <label for="dSlot">Time Slot</label>
-          <select id="dSlot">
-            <option value="Morning 06:00 AM - 07:30 AM">Morning 06:00 AM - 07:30 AM</option>
-            <option value="Morning 07:30 AM - 09:00 AM">Morning 07:30 AM - 09:00 AM</option>
-            <option value="Evening 06:00 PM - 07:00 PM">Evening 06:00 PM - 07:00 PM</option>
-            <option value="Evening 07:00 PM - 08:00 PM">Evening 07:00 PM - 08:00 PM</option>
-            <option value="Saturday Special 08:00 PM - 10:00 PM">Saturday Special 08:00 PM - 10:00 PM</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="btn primary gold-btn full-width">Generate Digital Darshan Pass 🎟️</button>
-    </form>
-    <div id="darshanPassOutput" class="pass-output" style="display:none;"></div>
-  </div>
-</div>
-
-<!-- 2. e-Seva Booking Modal -->
-<div id="sevaModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'sevaModal')">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal('sevaModal')">&times;</button>
-    <div class="modal-header">
-      <span class="modal-badge">🪔 TTD e-SEVA</span>
-      <h2>Book Arjitha Seva Ticket</h2>
-      <p>Participate in divine rituals and receive Swamivari Prasadam.</p>
-    </div>
-    <form id="sevaForm" onsubmit="generateSevaTicket(event)">
-      <div class="form-group">
-        <label for="sSevaType">Select Seva</label>
-        <select id="sSevaType">
-          <option value="Sita Rama Kalyanam (₹1116)">Sita Rama Kalyanam (₹1116)</option>
-          <option value="Sahasra Namarchana (₹516)">Sahasra Namarchana (₹516)</option>
-          <option value="Deepa Seva & Alankaram (₹316)">Deepa Seva & Alankaram (₹316)</option>
-          <option value="Abhishekam & Archana (₹216)">Abhishekam & Archana (₹216)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="sName">Devotee Full Name</label>
-        <input type="text" id="sName" required placeholder="Full Name">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="sGothram">Gothram (గోత్రం)</label>
-          <input type="text" id="sGothram" placeholder="e.g. Bharadwaja / Kashyapa">
-        </div>
-        <div class="form-group">
-          <label for="sNakshatram">Nakshatram (నక్షత్రం)</label>
-          <input type="text" id="sNakshatram" placeholder="e.g. Rohini / Uttara">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="sDate">Seva Date</label>
-          <input type="date" id="sDate" required>
-        </div>
-        <div class="form-group">
-          <label for="sPhone">Mobile Number</label>
-          <input type="tel" id="sPhone" required placeholder="10-digit mobile">
-        </div>
-      </div>
-      <button type="submit" class="btn primary gold-btn full-width">Proceed to Seva Confirmation 🪔</button>
-    </form>
-    <div id="sevaTicketOutput" class="pass-output" style="display:none;"></div>
-  </div>
-</div>
-
-<!-- 3. e-Hundi & Donation Modal -->
-<div id="hundiModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'hundiModal')">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal('hundiModal')">&times;</button>
-    <div class="modal-header">
-      <span class="modal-badge">🪙 SRIVARI e-HUNDI</span>
-      <h2>Offer Digital e-Hundi & Donations</h2>
-      <p>Select Trust & enter donation amount to generate UPI QR code & receipt.</p>
-    </div>
-    <form id="hundiForm" onsubmit="generateHundiReceipt(event)">
-      <div class="form-group">
-        <label for="hTrust">Select Donation Trust</label>
-        <select id="hTrust">
-          <option value="Nitya Annadanam Trust">Nitya Annadanam Trust (అన్నదాన నిధి)</option>
-          <option value="Temple Renovation & Development">Temple Renovation & Development (ఆలయ అభివృద్ధి)</option>
-          <option value="Goshala & Cow Protection Trust">Goshala & Cow Protection (గోసంరక్షణ)</option>
-          <option value="General Srivari e-Hundi">General Srivari e-Hundi (శ్రీవారి హుండీ)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Select Amount (₹)</label>
-        <div class="amount-chips">
-          <button type="button" class="chip" onclick="setAmount(516)">₹516</button>
-          <button type="button" class="chip" onclick="setAmount(1116)">₹1116</button>
-          <button type="button" class="chip" onclick="setAmount(2516)">₹2516</button>
-          <button type="button" class="chip" onclick="setAmount(5016)">₹5016</button>
-        </div>
-        <input type="number" id="hAmount" required min="11" placeholder="Or enter custom amount in ₹">
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="hName">Donor Name</label>
-          <input type="text" id="hName" required placeholder="Donor Full Name">
-        </div>
-        <div class="form-group">
-          <label for="hPhone">Phone / Email</label>
-          <input type="text" id="hPhone" required placeholder="Mobile or Email">
-        </div>
-      </div>
-      <button type="submit" class="btn primary gold-btn full-width">Generate UPI QR Code & Receipt 🪙</button>
-    </form>
-    <div id="hundiReceiptOutput" class="pass-output" style="display:none;"></div>
-  </div>
-</div>
-
-<!-- 4. Accommodation Modal -->
-<div id="accommodationModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'accommodationModal')">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal('accommodationModal')">&times;</button>
-    <div class="modal-header">
-      <span class="modal-badge">🏨 PILGRIM ACCOMMODATION</span>
-      <h2>Devotee Rest Houses & Facilities</h2>
-      <p>Polepalli (Basireddypalli) Pilgrim Amenities</p>
-    </div>
-    <div class="accommodation-info">
-      <div class="info-block">
-        <h4>🏡 Sri Rama Pilgrim Choultry</h4>
-        <p>Free rest rooms and bath facilities for outstation devotees visiting for Brahmotsavams and Saturday special darshans.</p>
-      </div>
-      <div class="info-block">
-        <h4>🏛️ Community Kalyana Mandapam</h4>
-        <p>Spacious hall available for devotee marriages, Upanayanam, and Annadanam functions with prior committee approval.</p>
-      </div>
-      <div class="info-block">
-        <h4>📞 Room Booking Enquiries</h4>
-        <p>Contact Temple Administration: <strong>+91 94940 00000</strong></p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Devotional Audio Player Widget -->
 <div class="audio-player-widget">
