@@ -55,35 +55,3 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") navLightbox(1);
 });
 
-// Direct Devotional MP3 Song Player
-let isPlayingAudio = false;
-
-function toggleAudio() {
-  const audio = document.getElementById("sriRamaAudio");
-  const icon = document.getElementById("audioIcon");
-  const label = document.querySelector(".audio-label");
-
-  if (!audio) return;
-
-  if (isPlayingAudio) {
-    audio.pause();
-    isPlayingAudio = false;
-    if (icon) icon.textContent = "🎵";
-    if (label) label.textContent = "శ్రీరామ గానం (Play)";
-  } else {
-    audio.volume = 1.0;
-    audio.play().then(() => {
-      isPlayingAudio = true;
-      if (icon) icon.textContent = "🔊";
-      if (label) label.textContent = "పాట ప్లే అవుతోంది (Playing)";
-    }).catch(err => {
-      console.log("Audio play error, reloading source...", err);
-      audio.load();
-      audio.play().then(() => {
-        isPlayingAudio = true;
-        if (icon) icon.textContent = "🔊";
-        if (label) label.textContent = "పాట ప్లే అవుతోంది (Playing)";
-      }).catch(e => console.log("User interaction required for autoplay:", e));
-    });
-  }
-}
