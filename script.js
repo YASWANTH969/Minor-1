@@ -55,37 +55,53 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") navLightbox(1);
 });
 
-// Ambient Devotional Sound Synthesizer (Web Audio API)
+// Telugu Sri Rama Devotional Audio Player
 let audioCtx = null;
 let isPlayingAudio = false;
 
 function toggleAudio() {
+  const audio = document.getElementById("sriRamaAudio");
   const icon = document.getElementById("audioIcon");
   const label = document.querySelector(".audio-label");
 
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-
   if (isPlayingAudio) {
+    if (audio) audio.pause();
     if (audioCtx) audioCtx.suspend();
     isPlayingAudio = false;
     if (icon) icon.textContent = "🎵";
-    if (label) label.textContent = "Sri Rama Chants";
+    if (label) label.textContent = "శ్రీరామ గానం (Play)";
   } else {
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
+    if (audio) {
+      audio.play().then(() => {
+        isPlayingAudio = true;
+        if (icon) icon.textContent = "🔊";
+        if (label) label.textContent = "శ్రీరామ గానం (Playing)";
+      }).catch(err => {
+        console.log("Audio stream fallback to synth:", err);
+        playTanpuraDrone();
+        isPlayingAudio = true;
+        if (icon) icon.textContent = "🔊";
+        if (label) label.textContent = "శ్రీరామ ధ్యానం (Playing)";
+      });
+    } else {
+      playTanpuraDrone();
+      isPlayingAudio = true;
+      if (icon) icon.textContent = "🔊";
+      if (label) label.textContent = "శ్రీరామ ధ్యానం (Playing)";
     }
-    playTanpuraDrone();
-    isPlayingAudio = true;
-    if (icon) icon.textContent = "🔊";
-    if (label) label.textContent = "Chants Playing";
   }
 }
 
 function playTanpuraDrone() {
-  if (!audioCtx) return;
-  const baseFreq = 136.1; // OM Frequency (C# 136.1 Hz)
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+
+  const baseFreq = 136.1; // Sacred C# OM Frequency
   const freqs = [baseFreq, baseFreq * 1.5, baseFreq * 2];
 
   freqs.forEach(f => {
