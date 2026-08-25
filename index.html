@@ -55,10 +55,15 @@
 
 <section id="temple" class="section">
   <div class="container split">
-    <div class="section-image temple-art">
-      <div class="om">ॐ</div>
-      <div class="art-title">శ్రీ రామ మందిరం</div>
-      <div class="art-sub">Sri Rama Temple</div>
+    <div class="section-image temple-photo-card" onclick="openLightbox('images/sri_rama_idols.png', 'శ్రీ సీతారామ స్వామివారి మూలవిరాట్ దర్శనం')">
+      <img src="images/sri_rama_idols.png" alt="Sri Sita Rama Swamivari Moolavirat" class="temple-photo">
+      <div class="photo-badge">
+        <div class="om-sm">ॐ</div>
+        <div>
+          <b>శ్రీ సీతారామ స్వామివారి మందిరం</b>
+          <small>Sri Rama Temple • Polepalli</small>
+        </div>
+      </div>
     </div>
     <div>
       <p class="eyebrow">OUR TEMPLE</p>
@@ -125,19 +130,49 @@
 
 <section id="gallery" class="section alt">
   <div class="container">
-    <p class="eyebrow center">MEMORIES</p>
-    <h2 class="center">Temple Gallery</h2>
-    <p class="section-intro">Replace these placeholders with real temple photographs.</p>
-    <div class="gallery">
-      <div class="gallery-item g1"><span>Sri Rama Temple</span></div>
-      <div class="gallery-item g2"><span>Festivals</span></div>
-      <div class="gallery-item g3"><span>Devotees</span></div>
-      <div class="gallery-item g4"><span>Pooja</span></div>
-      <div class="gallery-item g5"><span>Celebrations</span></div>
-      <div class="gallery-item g6"><span>Community</span></div>
+    <p class="eyebrow center">DIVINE DARSHAN & MEMORIES</p>
+    <h2 class="center">Temple Gallery (ఆలయ చిత్రాలు)</h2>
+    <p class="section-intro">Click on any photograph to view in full screen resolution.</p>
+    <div class="gallery-showcase">
+      <div class="gallery-card" onclick="openLightbox('images/sri_rama_idols.png', 'శ్రీ సీతారామ స్వామివారి మూలవిరాట్ అలంకారం • Sri Sita Rama Swamivari Moolavirat')">
+        <div class="gallery-card-media">
+          <img src="images/sri_rama_idols.png" alt="Sri Sita Rama Swamivari Moolavirat Alankaram" loading="lazy">
+          <div class="media-overlay">
+            <span class="zoom-pill">🔍 Tap for Full Screen</span>
+          </div>
+        </div>
+        <div class="gallery-card-body">
+          <span class="category-tag">Moolavirat Darshan</span>
+          <h3>శ్రీ సీతారామ స్వామివారి మూలవిరాట్</h3>
+          <p>Sri Sita Rama Swamivari Divine Alankaram with floral garlands and brass prabhavali arch.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card" onclick="openLightbox('images/sri_rama_garbhagriha.jpg', 'శ్రీరామ ఆలయ గర్భగుడి దర్శనం • Temple Garbhagriha Sanctum Entrance')">
+        <div class="gallery-card-media">
+          <img src="images/sri_rama_garbhagriha.jpg" alt="Temple Garbhagriha Sanctum Entrance" loading="lazy">
+          <div class="media-overlay">
+            <span class="zoom-pill">🔍 Tap for Full Screen</span>
+          </div>
+        </div>
+        <div class="gallery-card-body">
+          <span class="category-tag">Garbhagriha View</span>
+          <h3>ఆలయ గర్భగుడి ద్వార దర్శనం</h3>
+          <p>Garbhagriha sanctum entrance framed by ornate hand-carved wooden doors.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox Modal for Gallery Images -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+  <button class="lightbox-nav prev" onclick="navLightbox(-1, event)" aria-label="Previous Image">&#10094;</button>
+  <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged view">
+  <button class="lightbox-nav next" onclick="navLightbox(1, event)" aria-label="Next Image">&#10095;</button>
+  <div id="lightboxTitle" class="lightbox-title"></div>
+</div>
 
 <section id="donate" class="donate">
   <div class="container donate-grid">
