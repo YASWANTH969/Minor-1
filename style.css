@@ -238,3 +238,9 @@ footer{background:#230d07;color:#d9c7b7;padding:60px 0 0;border-top:3px solid #b
 
 /* Audio Player Floating Widget */
 
+
+/* Active Nav Indicator */
+nav a.active {
+  color: #b45309 !important;
+  border-bottom: 2px solid #b45309;
+}
