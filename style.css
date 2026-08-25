@@ -238,11 +238,3 @@ footer{background:#230d07;color:#d9c7b7;padding:60px 0 0;border-top:3px solid #b
 
 /* Audio Player Floating Widget */
 
-/* Devotional Song Section */
-.devotional-song-section{background:#fff8ee;padding:60px 0}
-.audio-song-card{max-width:680px;margin:0 auto;background:#fff;border:2px solid #e5a443;border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(217,119,6,.12)}
-.song-card-header{display:flex;align-items:center;gap:18px;margin-bottom:20px}
-.song-icon{width:54px;height:54px;background:linear-gradient(135deg,#9a3412,#d97706);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:26px;box-shadow:0 4px 15px rgba(154,52,18,.3)}
-.song-card-header h3{font-size:20px;color:#451409;margin-bottom:2px;font-family:'Noto Sans Telugu','Poppins',sans-serif}
-.song-card-header p{font-size:13px;color:#8a6a52}
-.audio-player-container audio{outline:none}
